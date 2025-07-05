@@ -43,30 +43,51 @@
     <tr>
       <th>Name</th>
       <th>Size</th>
+      <th>Type</th>
     </tr>
   </thead>
   <tbody>
+    <!-- Примеры -->
     <tr>
-      <td><a href="https://files.devbucket.org/software" download>software</a></td>
+      <td><a href="https://files.devbucket.org/software">software</a></td>
       <td>N/A</td>
+      <td>Folder</td>
     </tr>
     <tr>
-      <td><a href="https://files.devbucket.org/python-tools" download>python-tools</a></td>
+      <td><a href="https://files.devbucket.org/python-tools">python-tools</a></td>
       <td>N/A</td>
+      <td>Folder</td>
     </tr>
     <tr>
-      <td><a href="https://files.devbucket.org/android" download>android</a></td>
+      <td><a href="https://files.devbucket.org/android">android</a></td>
       <td>N/A</td>
+      <td>Folder</td>
     </tr>
     <!-- Добавляй новые строки вот так -->
     <!--
     <tr>
-      <td><a href="files/YOUR_FILE" download>YOUR_FILE</a></td>
+      <td><a href="YOUR_LINK_HERE" TARGET_ATTR>NAME</a></td>
       <td>SIZE</td>
+      <td>TYPE</td>
     </tr>
     -->
   </tbody>
 </table>
+
+<script>
+  // Автоматическая настройка target на основе типа
+  document.querySelectorAll('tbody tr').forEach(row => {
+    const typeCell = row.cells[2];
+    const link = row.querySelector('a');
+    if (typeCell && link) {
+      if (typeCell.textContent.trim().toLowerCase() === 'file') {
+        link.setAttribute('target', '_blank');
+      } else {
+        link.removeAttribute('target');
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
