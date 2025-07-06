@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Vivaldi Files</title>
+  <title>files.devbucket.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: sans-serif; background: #f5f5f5; margin: 0; padding: 1em; }
@@ -10,24 +10,24 @@
     th, td { padding: 8px 12px; border-bottom: 1px solid #ddd; text-align: left; }
     tr:hover { background-color: #f0f0f0; }
     .top-button { display: inline-block; margin-bottom: 1em; padding: 8px 16px; background: #1976D2; color: white; text-decoration: none; border: none; border-radius: 0; }
-    .banner { display: none; background: white; padding: 20px; text-align: center; border: 1px solid #ccc; max-width: 400px; margin: 50px auto; }
-    .banner button { padding: 10px 20px; background: #7f7fff; color: white; border: none; cursor: pointer; }
+    .banner { background: white; padding: 20px; text-align: center; border: 1px solid #ccc; max-width: 400px; margin: 50px auto; }
+    .banner a.button { display: inline-block; padding: 10px 20px; background: #7f7fff; color: white; text-decoration: none; }
+    .banner a.button:hover { background: #5f5fcf; }
     @media (max-width: 600px) { table, th, td { font-size: 14px; } .top-button { padding: 6px 12px; } }
   </style>
 </head>
 <body>
-<div class="banner" id="js-banner">
+<div class="banner">
   <p><strong>Please enable JavaScript to visit this website.</strong></p>
   <p>But if you don't want to, you can visit the website without JavaScript. Just press the button below.</p>
-  <button onclick="document.getElementById('js-banner').style.display='none';document.getElementById('content').style.display='block';">NOT NOW</button>
+  <a href="index.html?show=1" class="button">NOT NOW</a>
 </div>
 
-<div id="content" style="display:none;">
+<!-- Контент показывается только если заходят по index.html?show=1 -->
+<div id="content">
   <a href=".." class="top-button">Up</a>
   <table>
-    <thead>
-      <tr><th>Name</th><th>Size</th><th>Type</th></tr>
-    </thead>
+    <thead><tr><th>Name</th><th>Size</th><th>Type</th></tr></thead>
     <tbody>
       <tr><td><a href="https://github.com/trishamine/download/releases/download/software/Vivaldi.7.4.3691.74_arm64-v8a.apk">Vivaldi.7.4.3691.74_arm64-v8a.apk</a></td><td>280 MB</td><td>File</td></tr>
       <tr><td><a href="https://github.com/trishamine/download/releases/download/software/Vivaldi.7.4.3691.74_armeabi-v7a.apk">Vivaldi.7.4.3691.74_armeabi-v7a.apk</a></td><td>195 MB</td><td>File</td></tr>
@@ -35,17 +35,5 @@
     </tbody>
   </table>
 </div>
-
-<noscript><style>#js-banner{display:block!important;}</style></noscript>
-<script>
-  document.getElementById('content').style.display = 'block';
-  document.querySelectorAll('#content tbody tr').forEach(row => {
-    const typeCell = row.cells[2];
-    const link = row.querySelector('a');
-    if (typeCell && link && typeCell.textContent.trim().toLowerCase() === 'file') {
-      link.setAttribute('target', '_blank');
-    }
-  });
-</script>
 </body>
 </html>
