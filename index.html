@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Vivaldi Files</title>
+  <title>files.devbucket.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: sans-serif; background: #f5f5f5; margin: 0; padding: 1em; }
@@ -16,13 +16,13 @@
   </style>
 </head>
 <body>
-<div class="banner" id="js-banner">
+<div class="banner" id="js-banner" style="display: block;">
   <p><strong>Please enable JavaScript to visit this website.</strong></p>
   <p>But if you don't want to, you can visit the website without JavaScript. Just press the button below.</p>
-  <button onclick="document.getElementById('js-banner').style.display='none';document.getElementById('content').style.display='block';">NOT NOW</button>
+  <button id="not-now-btn" style="display: none;">NOT NOW</button>
 </div>
 
-<div id="content" style="display:none;">
+<div id="content" style="display: none;">
   <a href=".." class="top-button">Up</a>
   <table>
     <thead>
@@ -48,16 +48,23 @@
   </table>
 </div>
 
-<noscript><style>#js-banner{display:block!important;}</style></noscript>
+<noscript>
+  <style>
+    #js-banner { display: block; }
+    #content { display: none; }
+  </style>
+</noscript>
+
 <script>
-  document.getElementById('content').style.display = 'block';
-  document.querySelectorAll('#content tbody tr').forEach(row => {
-    const typeCell = row.cells[2];
-    const link = row.querySelector('a');
-    if (typeCell && link && typeCell.textContent.trim().toLowerCase() === 'file') {
-      link.setAttribute('target', '_blank');
-    }
+  // Если JS хоть как-то работает — показываем кнопку
+  document.getElementById('not-now-btn').style.display = 'inline-block';
+
+  // Обрабатываем клик по кнопке
+  document.getElementById('not-now-btn').addEventListener('click', function() {
+    document.getElementById('js-banner').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
   });
 </script>
+
 </body>
 </html>
