@@ -2,112 +2,54 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>devbucket.org files</title>
+  <title>Software Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 1em;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-    }
-    th, td {
-      padding: 8px 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    tr:hover {
-      background-color: #f0f0f0;
-    }
-    .top-button {
-      display: inline-block;
-      margin-bottom: 1em;
-      padding: 8px 16px;
-      background: #1976D2;
-      color: white;
-      text-decoration: none;
-      border-radius: 0px;
-    }
+    body { font-family: sans-serif; background: #f5f5f5; margin: 0; padding: 1em; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { padding: 8px 12px; border-bottom: 1px solid #ddd; text-align: left; }
+    tr:hover { background-color: #f0f0f0; }
+    .top-button { display: inline-block; margin-bottom: 1em; padding: 8px 16px; background: #1976D2; color: white; text-decoration: none; border: none; border-radius: 0; }
+    .banner { display: none; background: white; padding: 20px; text-align: center; border: 1px solid #ccc; max-width: 400px; margin: 50px auto; }
+    .banner button { padding: 10px 20px; background: #7f7fff; color: white; border: none; cursor: pointer; }
+    @media (max-width: 600px) { table, th, td { font-size: 14px; } .top-button { padding: 6px 12px; } }
   </style>
 </head>
 <body>
+<div class="banner" id="js-banner">
+  <p><strong>Please enable JavaScript to visit this website.</strong></p>
+  <p>But if you don't want to, you can visit the website without JavaScript. Just press the button below.</p>
+  <button onclick="document.getElementById('js-banner').style.display='none';document.getElementById('content').style.display='block';">NOT NOW</button>
+</div>
 
-<a href="https://files.devbucket.org" class="top-button">Up</a>
+<div id="content" style="display:none;">
+  <a href=".." class="top-button">Up</a>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Size</th><th>Type</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/brave-browser-1-80-110.apk">brave-browser-1-80-110.apk</a></td><td>272 MB</td><td>File</td></tr>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/discord.apk">discord.apk</a></td><td>19.1 MB</td><td>File</td></tr>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/firefox-139-0-3.apk">firefox-139-0-3.apk</a></td><td>333 MB</td><td>File</td></tr>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/microsoft-edge-137-0-3296-82.apk">microsoft-edge-137-0-3296-82.apk</a></td><td>190 MB</td><td>File</td></tr>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/Opera_GX_v1.8.7.apk">Opera_GX_v1.8.7.apk</a></td><td>39.5 MB</td><td>File</td></tr>
+      <tr><td><a href="https://github.com/trishamine/download/releases/download/software/plus-messenger-11-12-0-0.apk">plus-messenger-11-12-0-0.apk</a></td><td>63.4 MB</td><td>File</td></tr>
+      <tr><td><a href="https://files.devbucket.org/software/vivaldi">Vivaldi</a></td><td>N/A</td><td>Folder</td></tr>
+    </tbody>
+  </table>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Примеры -->
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/brave-browser-1-80-110.apk">brave-browser-1-80-110.apk</a></td>
-      <td>272 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/discord.apk">discord.apk</a></td>
-      <td>19.1 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/firefox-139-0-3.apk">firefox-139-0-3.apk</a></td>
-      <td>333 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/microsoft-edge-137-0-3296-82.apk">microsoft-edge-137-0-3296-82.apk</a></td>
-      <td>190 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/Opera_GX_v1.8.7.apk">Opera_GX_v1.8.7.apk</a></td>
-      <td>39.5 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/trishamine/download/releases/download/software/plus-messenger-11-12-0-0.apk">plus-messenger-11-12-0-0.apk</a></td>
-      <td>63.4 MB</td>
-      <td>File</td>
-    </tr>
-    <tr>
-      <td><a href="https://files.devbucket.org/software/vivaldi">Vivaldi</a></td>
-      <td>N/A</td>
-      <td>Folder</td>
-    </tr>
-    <!-- Добавляй новые строки вот так -->
-    <!--
-    <tr>
-      <td><a href="YOUR_LINK_HERE" TARGET_ATTR>NAME</a></td>
-      <td>SIZE</td>
-      <td>TYPE</td>
-    </tr>
-    -->
-  </tbody>
-</table>
-
+<noscript><style>#js-banner{display:block!important;}</style></noscript>
 <script>
-  // Автоматическая настройка target на основе типа
-  document.querySelectorAll('tbody tr').forEach(row => {
+  document.getElementById('content').style.display = 'block';
+  document.querySelectorAll('#content tbody tr').forEach(row => {
     const typeCell = row.cells[2];
     const link = row.querySelector('a');
-    if (typeCell && link) {
-      if (typeCell.textContent.trim().toLowerCase() === 'file') {
-        link.setAttribute('target', '_blank');
-      } else {
-        link.removeAttribute('target');
-      }
+    if (typeCell && link && typeCell.textContent.trim().toLowerCase() === 'file') {
+      link.setAttribute('target', '_blank');
     }
   });
 </script>
-
 </body>
 </html>
